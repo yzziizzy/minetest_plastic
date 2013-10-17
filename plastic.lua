@@ -16,27 +16,124 @@ minetest.register_craft({
 
 
 -- plastic block
+minetest.register_node( "plastic:plastic_rod", {
+	description = "Plastic Rod",
+	tiles = { "plastic_plastic_block.png" },
+	paramtype = "light",
+	groups = {cracky=2},
+	sounds = default.node_sound_stone_defaults(),
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.1, -0.5, -0.1, 0.1, 0.5, 0.1},
+		},
+	},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.1, -0.5, -0.1, 0.1, 0.5, 0.1},
+		},
+	},
+}) 
+
+minetest.register_node( "plastic:plastic_rod_2d_cross", {
+	description = "Plastic Cross (2D)",
+	tiles = { "plastic_plastic_block.png" },
+	paramtype = "light",
+	groups = {cracky=2},
+	sounds = default.node_sound_stone_defaults(),
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.1, -0.5, -0.1, 0.1, 0.5, 0.1},
+			{-0.5, -0.1, -0.1, 0.5, 0.1, 0.1},
+		},
+	},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.1, -0.5, -0.1, 0.1, 0.5, 0.1},
+			{-0.5, -0.1, -0.1, 0.5, 0.1, 0.1},
+		},
+	},
+}) 
+
+minetest.register_node( "plastic:plastic_rod_3d_cross", {
+	description = "Plastic Cross (3D)",
+	tiles = { "plastic_plastic_block.png" },
+	paramtype = "light",
+	groups = {cracky=2},
+	sounds = default.node_sound_stone_defaults(),
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.1, -0.1, -0.5, 0.1, 0.1, 0.5},
+			{-0.1, -0.5, -0.1, 0.1, 0.5, 0.1},
+			{-0.5, -0.1, -0.1, 0.5, 0.1, 0.1},
+		},
+	},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.1, -0.1, -0.5, 0.1, 0.1, 0.5},
+			{-0.1, -0.5, -0.1, 0.1, 0.5, 0.1},
+			{-0.5, -0.1, -0.1, 0.5, 0.1, 0.1},
+		},
+	},
+}) 
+
+-- plastic block
 minetest.register_node( "plastic:plastic_block", {
 	description = "Plastic Block",
 	tiles = { "plastic_plastic_block.png" },
-	is_ground_content = true,
 	groups = {choppy=2},
 	sounds = default.node_sound_wood_defaults(),
 }) 
+minetest.register_craft( {
+	output = "plastic:plastic_rod 1",
+	recipe = {
+			{ "homedecor:plastic_sheeting", "", "" },
+			{ "homedecor:plastic_sheeting", "", "" },
+			{ "homedecor:plastic_sheeting", "", "" }
+	},
+})
 	
+minetest.register_craft( {
+	output = "plastic:plastic_rod_2d_cross 1",
+	recipe = {
+			{ "", "homedecor:plastic_sheeting", "" },
+			{ "homedecor:plastic_sheeting", "homedecor:plastic_sheeting", "homedecor:plastic_sheeting" },
+			{ "", "homedecor:plastic_sheeting", "" }
+	},
+})
+	
+minetest.register_craft( {
+	output = "plastic:plastic_rod_3d_cross 1",
+	recipe = {
+			{ "", "homedecor:plastic_sheeting", "homedecor:plastic_sheeting" },
+			{ "homedecor:plastic_sheeting", "homedecor:plastic_sheeting", "homedecor:plastic_sheeting" },
+			{ "homedecor:plastic_sheeting", "homedecor:plastic_sheeting", "" }
+	},
+})
+	
+-- if minetest.get_modpath("moreblocks") 
+	-- table.insert(circular_saw.known_stairs, v);
 	
 minetest.register_craft({
 	type = "shapeless",
 	output = "plastic:plastic_block 1",
-	recipe = { "homedecor:plastic_sheeting",
-			"homedecor:plastic_sheeting",
-			"homedecor:plastic_sheeting",
-			"homedecor:plastic_sheeting",
-			"homedecor:plastic_sheeting",
-			"homedecor:plastic_sheeting",
-			"homedecor:plastic_sheeting",
-			"homedecor:plastic_sheeting",
-			"homedecor:plastic_sheeting"
+	recipe = { "homedecor:plastic_rod",
+			"homedecor:plastic_rod",
+			"homedecor:plastic_rod",
+			"homedecor:plastic_rod",
+			"homedecor:plastic_rod",
+			"homedecor:plastic_rod",
+			"homedecor:plastic_rod",
+			"homedecor:plastic_rod",
+			"homedecor:plastic_rod"
 	}
 })
 
