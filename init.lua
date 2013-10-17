@@ -1,5 +1,6 @@
 local modpath = minetest.get_modpath("plastic")
 dofile(modpath.."/plastic.lua")
+dofile(modpath.."/railing.lua")
 -- dofile(modpath.."/tarsands.lua")
 
 --
