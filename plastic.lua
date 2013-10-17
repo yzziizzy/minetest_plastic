@@ -76,7 +76,7 @@ minetest.register_craft( {
 })
 -- plastic tube recipe
 minetest.register_craft( {
-	output = "pipeworks:tube 6",
+	output = "pipeworks:tube 3",
 	recipe = {
 			{ "homedecor:plastic_sheeting", "homedecor:plastic_sheeting", "homedecor:plastic_sheeting" },
 			{ "", "", "" },
