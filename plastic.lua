@@ -2,6 +2,13 @@
 plastic = { }
 -- deps
 
+--[[
+TODO:
+	extruder to get various pieces of stuff
+
+]]
+
+
 minetest.register_craft({
 	type = "shapeless",
 	output = 'homedecor:plastic_base 4',
@@ -201,8 +208,12 @@ plastic.plastic_chest_formspec =
 
 minetest.register_node("plastic:plastic_chest", {
 	description = "Plastic Chest",
-	tiles = {"plastic_plastic_chest_top.png", "plastic_plastic_chest_top.png", "plastic_plastic_chest_side.png",
-		"plastic_plastic_chest_side.png", "plastic_plastic_chest_side.png", "plastic_plastic_chest_front.png"},
+	tiles = {"plastic_plastic_block.png^plastic_plastic_chest_top.png", 
+			"plastic_plastic_block.png^plastic_plastic_chest_top.png", 
+			"plastic_plastic_block.png^plastic_plastic_chest_side.png",
+			"plastic_plastic_block.png^plastic_plastic_chest_side.png",
+			"plastic_plastic_block.png^plastic_plastic_chest_side.png", 
+			"plastic_plastic_block.png^plastic_plastic_chest_front.png"},
 	paramtype2 = "facedir",
 	groups = {choppy=2,oddly_breakable_by_hand=2},
 	legacy_facedir_simple = true,
